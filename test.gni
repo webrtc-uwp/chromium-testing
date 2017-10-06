@@ -315,6 +315,21 @@ template("test") {
         # Give tests the default manifest on Windows (a no-op elsewhere).
         "//build/win:default_exe_manifest",
       ]
+      if (is_winuwp) {
+        if (is_c_main) {
+          if (is_c_main_no_args) {
+            deps += [ "//third_party/winuwp_compat:wrap_main_plain_c" ]
+          } else {
+            deps += [ "//third_party/winuwp_compat:wrap_main_utf8_c" ]
+          }
+        } else {
+          if (is_c_main_no_args) {
+            deps += [ "//third_party/winuwp_compat:wrap_main_plain_cc" ]
+          } else {
+            deps += [ "//third_party/winuwp_compat:wrap_main_utf8_cc" ]
+          }
+        }
+      }
     }
   }
 }
@@ -328,4 +343,6 @@ set_defaults("test") {
   } else {
     configs = default_executable_configs
   }
+  is_c_main = false
+  is_c_main_no_args = false
 }
