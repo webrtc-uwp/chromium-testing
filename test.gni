@@ -315,7 +315,7 @@ template("test") {
         # Give tests the default manifest on Windows (a no-op elsewhere).
         "//build/win:default_exe_manifest",
       ]
-      if (is_winuwp) {
+      if (is_target_winuwp) {
         if (is_c_main) {
           if (is_c_main_no_args) {
             deps += [ "//third_party/winuwp_compat:wrap_main_plain_c" ]
