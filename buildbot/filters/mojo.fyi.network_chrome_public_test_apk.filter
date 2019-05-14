@@ -4,40 +4,26 @@
 
 # These tests currently fail when run with --enable-features=NetworkService
 
-# Uncategorized timeouts or test failures.
--org.chromium.chrome.browser.externalnav.UrlOverridingTest.testNavigationFromUserGestureInSubFrame
-
 # Fail because they expect to have no features enabled when run.
 -org.chromium.chrome.browser.FeaturesAnnotationsTest.testFeaturesAddToExistingFlags
 -org.chromium.chrome.browser.FeaturesAnnotationsTest.testFeaturesDoNotRemoveExistingFlags
 -org.chromium.chrome.browser.FeaturesAnnotationsTest.testFeaturesSetExistingFlags
 
-# http://crbug.com/882019
--org.chromium.chrome.browser.UrlSchemeTest.testContentUrlAccess
--org.chromium.chrome.browser.UrlSchemeTest.testContentUrlIframeAccessFromContentUrl
--org.chromium.chrome.browser.UrlSchemeTest.testContentUrlImageFromContentUrl
+# http://crbug.com/917467
+-org.chromium.chrome.browser.webapps.WebApkIntegrationTest.testLaunchAndNavigateOffOrigin
+-org.chromium.chrome.browser.webapps.WebApkIntegrationTest.testLaunchAndNavigationInNewWindowOffandInOrigin
+-org.chromium.chrome.browser.webapps.WebApkIntegrationTest.testLaunchAndOpenNewWindowInOrigin
 
-# https://crbug.com/721403
--org.chromium.chrome.browser.TabsOpenedFromExternalAppTest.testLaunchWebLiteURL
--org.chromium.chrome.browser.appmenu.DataSaverAppMenuTest.testMenuDataSaver
--org.chromium.chrome.browser.appmenu.DataSaverAppMenuTest.testMenuDataSaverPersistent
--org.chromium.chrome.browser.customtabs.CustomTabActivityTest.testLaunchWebLiteURL
--org.chromium.chrome.browser.infobar.InfoBarTest.testDataReductionPromoInfoBar
+# Miscellaneous flaky or failing tests:
+# http://crbug.com/941856
+-org.chromium.chrome.browser.webapps.WebApkIntegrationTest.testActivateWebApk
 
-# https://crbug.com/872343
-# These only fail with OOP network service.
--org.chromium.chrome.browser.profiling_host.ProfilingProcessHostAndroidTest.testModeBrowser
--org.chromium.chrome.browser.profiling_host.ProfilingProcessHostAndroidTest.testModeBrowserAndAllUtility
--org.chromium.chrome.browser.profiling_host.ProfilingProcessHostAndroidTest.testModeBrowserDynamic
--org.chromium.chrome.browser.profiling_host.ProfilingProcessHostAndroidTest.testModeBrowserDynamicPseudo
--org.chromium.chrome.browser.profiling_host.ProfilingProcessHostAndroidTest.testModeBrowserDynamicPseudoSampleEverything
--org.chromium.chrome.browser.profiling_host.ProfilingProcessHostAndroidTest.testModeBrowserDynamicPseudoSamplePartial
+# http://crbug.com/943829
+-org.chromium.chrome.browser.autofill_assistant.AutofillAssistantUiTest.testStartAndAccept
+-org.chromium.chrome.browser.autofill.keyboard_accessory.AccessorySheetViewTest.testRemovingTabDeletesItsView
 
-# https://crbug.com/888020
-# These only fail with OOP network service.
--org.chromium.chrome.browser.HTTPSTabsOpenedFromExternalAppTest.testReferrerPolicyHttpReferrerHttpsNavigationsPolicyDefault
--org.chromium.chrome.browser.share.ShareMenuActionHandlerIntegrationTest.testCanonicalUrlsOverHttps
--org.chromium.chrome.browser.omnibox.OmniboxTest.testHttpsLocationBarColor
--org.chromium.chrome.browser.omnibox.OmniboxTest.testSecurityIconOnHTTPS
--org.chromium.chrome.browser.ssl.CaptivePortalTest.testCaptivePortalCertificateListFeature
+# http://crbug.com/943835
+-org.chromium.chrome.browser.widget.OverviewListLayoutTest.testCanSwipeClosed
 
+# http://crbug.com/943847
+-org.chromium.chrome.browser.browserservices.TrustedWebActivityTest.launchesTwa
